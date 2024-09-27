@@ -1,0 +1,155 @@
+<style>
+  
+  .image-container {
+    position: relative;
+    width: 760px;
+    height: 760px;
+    margin: 0;
+    padding: 0;
+
+    scale: 0.5;
+  }
+  
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  
+  .image:nth-child(2) {
+    z-index: 1; /* Adjust the z-index to control the stacking order */
+  }
+  
+  .image:nth-child(3) {
+    z-index: 2; /* Adjust the z-index to control the stacking order */
+  }
+  
+  .image:nth-child(4) {
+    z-index: 3; /* Adjust the z-index to control the stacking order */
+  }
+  
+  .image:nth-child(5) {
+    z-index: 4; /* Adjust the z-index to control the stacking order */
+  }
+  
+  .image:nth-child(6) {
+    width: 30px;
+    height: 30px;
+    z-index: 8; /* Adjust the z-index to control the stacking order */
+  }
+  
+  .square {
+    rotate: 45deg;
+    position: absolute;
+    top: 150px;
+    left: 150px;
+    scale: 0.95;
+    /* transform: translate(-50%, -50%); */
+    width: 450px;
+    height: 450px;
+    z-index: 8; /* Adjust the z-index to control the stacking order */
+  }
+  
+  #TheBall {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    scale: 1.3;
+    border-radius: 50%;
+  }
+  
+  /* @keyframes spin2 {
+    0% {
+      transform: rotate(var(--my-start-degree-ball));
+    }
+    100% {
+      transform: rotate(var(--my-end-degree-ball));
+    }
+  } 
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(var(--my-start-degree));
+    }
+    100% {
+      transform: rotate(var(--my-end-degree)); 
+    }
+  }
+  
+  
+  .theSpinOneanim {
+    animation: spin 10s cubic-bezier(0,.84,.55,.98) forwards; 
+  }
+
+  .squareanim {
+    animation: spin2 10s cubic-bezier(0,.84,.55,.98) forwards;
+  }
+  */
+</style>
+
+<div class="image-container">
+  <img src="/images/rouletteImages/roulette_1.png" alt="Image 1" class="image" id="ThefirstOne">
+  <img src="/images/rouletteImages/roulette_2.png" alt="Image 2" class="image theSpinOneanim" id="theSpinOne"> 
+  <img src="/images/rouletteImages/roulette_3.png" alt="Image 3" class="image">
+  <img src="/images/rouletteImages/roulette_4.png" alt="Image 4" class="image">
+  <img src="/images/rouletteImages/roulette_5.png" alt="Image 5" class="image">
+  <div id="TheBallOne" class="square squareanim">
+    <img src="/images/rouletteImages/ball.png" alt="Image 6" class="image" id="TheBall">
+   </div>
+</div>
+
+
+
+<!-- <script>
+function init() {
+  function generateRandomNumber() {
+    return Math.floor(Math.random() * 37);
+  } 
+
+  const randomNumber = generateRandomNumber();  
+  console.log("Random Number:" + randomNumber);
+
+  const singleRotation = 360/37;
+
+  const rouletteWheelNumbers = [ 
+    0, 32, 15, 19, 4, 21, 2, 25, 17,
+    34, 6, 27, 13, 36, 11, 30, 8, 23,
+    10, 5, 24, 16, 33, 1, 20, 14, 31,
+    9, 22, 18, 29, 7, 28, 12, 35, 3, 26
+  ];
+
+  function calculateDegreesRoulette(number) {
+    let degreesRoulette = 0;
+    for (let i = 0; i < rouletteWheelNumbers.length; i++) {
+      if (number == rouletteWheelNumbers[i]) {
+        degreesRoulette = i * singleRotation;
+      }
+    }
+    return degreesRoulette;
+  }
+
+function generateRandomRotation() {
+  return Math.floor(Math.random() * 360);
+}
+
+const randomRotation = generateRandomRotation();
+console.log("Random Rotation: " + randomRotation);
+
+  const rawdegree = calculateDegreesRoulette(randomNumber);
+  // document.getElementById("theSpinOne").style.transform = `rotate(${-degreesRoulette}deg)`;
+  const degreesRoulette = rawdegree + 1080 + randomRotation ; 
+  console.log("Degrees Roulette: " + -degreesRoulette);
+  document.getElementById("theSpinOne").style.setProperty('--my-end-degree', `${-degreesRoulette}deg`);
+
+  const rawdegreeBall = 360 - degreesRoulette; 
+  console.log("Raw Degree Ball: " + rawdegreeBall); 
+
+  const degreesBall = (360 - randomRotation) + 1080;
+  // document.getElementsById("theBallOne").style.setProperty('--my-end-degree-ball', `${degreesBall}deg`);
+  // document.getElementsByClassName("theSpinOne").style.setProperty('--my-end-degree-ball', `${degreesBall}deg`);
+  document.documentElement.style .setProperty('--my-end-degree-ball', `${degreesBall}deg`);
+}
+</script> -->

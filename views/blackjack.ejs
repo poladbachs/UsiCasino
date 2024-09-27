@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Black Jack</title>
+        <link rel="stylesheet" href="../css/black-jack.css">
+        <link rel="stylesheet" href="../css/opening.css" />
+        <link rel="icon" href="../images/usicoin.png" type="image/x-icon"/>
+
+
+        <style media="screen,print">
+            @font-face {
+                font-family: 'BJF';
+                src: url(../font/BJF.ttf);
+            }
+        </style>
+       
+    </head>
+<body>
+    <h2 class="emailholder" style="display: none;"><%= user.email %></h2> 
+    <form>
+        <p class="creditholder" style="color: #e0aa35;">Your Credits: <span id="credits"><%= user.credits %></span></h2> 
+        <p class="inputholder" style="color: #e0aa35;">Your Bet: <input type="number" id="betInput" required min="1" step="1"></p>
+        <h2 class="usernameholder" style="display: block;"> Dear <%= user.username %>, please place your bet.</h2> 
+        <button id="start">Start Game</button>
+    </form>
+    <h2 id="message">
+
+    </h2>
+    <div id="counter" style=" font-size: 16pt;" >  </div>
+
+    <div id="game-block">
+        <h2>Dealer: <span id="dealer-sum"></span></h2>
+        <div id="dealer-cards">
+        </div>
+
+        <h2>You: <span id="your-sum"></span></h2>
+
+        <div id="your-cards">
+        </div>
+
+        <br>
+
+        <button id="hit">Hit</button>
+        <button id="stay">Stay</button>
+        <form action="/home" method="GET">
+            <button id="black-jack">Home</button>
+        </form>
+    </div>
+
+    <script src="../socket.io/socket.io.js"></script>
+    <script src="../js/ws-client-blackjack.js"></script>
+    <script src="../js/inactivityTimer.js"> </script>
+</body>
+</html>

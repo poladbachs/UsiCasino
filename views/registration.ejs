@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>USI-CASINO</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="color-scheme" content="light dark">
+
+        <link rel="stylesheet" href="../css/log_reg.css" />
+        <link rel="stylesheet" href="../css/opening.css" />
+        <link rel="icon" href="../images/usicoin.png" type="image/x-icon"/>
+        <style media="screen,print">
+            @font-face {
+                font-family: 'Inter';
+                src: url(../font/Inter.ttf);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="Container">
+
+            <p class="label"><b>Register</b></p>
+
+            <form class="log" action="/create" method="POST">
+
+                
+                <input id="username" name= "username" type="text" required  title="Enter a valid title" placeholder="Username" value="<%= username || '' %>">
+                
+                <% if (usernameTaken) { %>
+                    <p class="error-message">Username is already in use</p>
+                <% } %>
+
+
+                <input id="email" name= "email" type="email" required  title="Enter a valid title" placeholder="E-mail" value="<%= email || '' %>">
+
+                <% if (emailTaken) { %>
+                    <p class="error-message">Email is already in use</p>
+                <% } %>
+
+
+                <div class="password-input">
+                    <input id="password" name="password" type="password" required  title="Enter a valid title" placeholder="Password" value="<%= password || '' %>">
+                    <button id="toggle-password" type="button" onclick="togglePasswordVisibility()">Show</button>
+                    <input id="confirm-password" name="confirm_password" type="password" required  title="Enter a valid title" placeholder="Confirm password">
+                </div>
+
+                <% if (passwordMismatch) { %>
+                    <p class="error-message">Passwords are not the same</p>
+                <% } %>
+
+
+                
+                <button id="login">Register</button>
+
+                
+            </form>
+
+            <form class="reg" action="/login" method="GET">
+                <button id="create">Already have an account? Login</button>
+            </form>
+        </div>
+
+    </body>
+
+    <script>
+        function togglePasswordVisibility() {
+          let passwordInput = document.getElementById('password');
+          let toggleButton = document.getElementById('toggle-password');
+          let confirmPass = document.getElementById('confirm-password');
+      
+          if (passwordInput.type === 'password' && confirmPass.type ==='password') {
+            passwordInput.type = 'text';
+            confirmPass.type ='text'
+            toggleButton.textContent = 'Hide';
+          } else {
+            passwordInput.type = 'password';
+            confirmPass.type ='password'
+            toggleButton.textContent = 'Show';
+          }
+        }
+      </script>
+</html>

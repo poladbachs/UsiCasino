@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="color-scheme" content="light dark">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wheel of Fortune</title>
+  <link rel="stylesheet" href="/css/fortune_wheel.css" />
+  <link rel="stylesheet" href="../css/standard.css" />
+  <link rel="stylesheet" href="../css/opening.css" />
+  <link rel="stylesheet" href="/css/index.css" />
+  <link rel="icon" href="../images/usicoin.png" type="image/x-icon"/>
+</head>
+
+<body>
+  <audio id="backgroundAudio" controls autoplay loop hidden >
+    <source src="../music/Wheel of Fortune Closing Theme.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <script>
+    var audio = document.getElementById("backgroundAudio");
+    audio.volume = 0.1;
+  </script>
+  <h2 class="usernameholder" style="display: none;">
+    <%= user.username %>
+  </h2>
+  <h2 class="emailholder" style="display: none;">
+    <%= user.email %>
+  </h2>
+  <div class="number-slots" style="display: none;">
+    <div class="group">
+      <div class="fake-reel"></div>
+      <div class="fake-reel"></div>
+      <div class="fake-reel"></div>
+      <div class="fake-reel"></div>
+      <div class="fake-reel"></div>
+    </div>
+
+    <div class="group">
+      <div class="reel"></div>
+      <div class="reel"></div>
+      <div class="reel"></div>
+      <div class="reel"></div>
+      <div class="reel"></div>
+    </div>
+
+    <h2 class="js-announcement announcement"></h2>
+
+    <button class="new-btn1" id="new-btn1" style="display: none;">Go back to Wheel</button>
+    <button class="slotButton">
+      Press to Start
+    </button>
+  </div>
+
+  <!-- <button class="new-btn1" style="display: none;">Go back to Wheel</button> -->
+
+  <div class="container-board" style="display: none;">
+    <div class="guess-board">
+
+      <div class="question-container">
+        <p class="question-tiles"></p>
+      </div>
+
+      <div class="guess-tiles-container"></div>
+    </div>
+
+    <div class="guess-game-buttons">
+      <form action="/incrementCredits" method="POST"></form>
+      <form action="/decrementCredits" method="POST"></form>
+      <div class="game-btn guess-container">
+        <input type="text" id="guessInput" name="guessInput" required placeholder="Guess letter">
+        <div class="guess-btn">Reveal</div>
+      </div>
+      <div id="winning-message" class="message-win" style="display: none">
+        <p class="message-text" id="end-message"></p>
+        <button class="new-btn">Go back to Wheel</button>
+        <!-- <button class="back-btn">Go back to Main Menu</button> -->
+      </div>
+      <div class="game-btn answer-container">
+        <input type="text" id="answerInput" name="answerInput" required placeholder="Give answer">
+        <div class="answer-btn">Check</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-game">
+
+    <div class="interface-container">
+      <div class="credits-container">
+        <div class="start-credits-window" id="startCreditsWindow">
+          <p class="start-credits" id="startCredits"></p>
+          <p id="spinCounter" style="color: rgb(29, 180, 194);">Spins: 0</p>
+        </div>
+        <p>Current Credits: <span id="creditAmount" style="color: rgb(19, 229, 19);">
+            <%= user.credits %>
+          </span></p>
+        <div class="message-window" id="messageWindow">
+          <p class="message-text" id="messageText"></p>
+        </div>
+      </div>
+
+      <div class="bet-container">
+        <input type="number" id="betInput" name="betAmount" min="10" step="10" required
+          placeholder="Bet">
+      </div>
+
+      <div id="wheelContainer">
+        <img src="/images/wheelborder.png" alt="wheel border" id="wheelborder">
+        <canvas id="wheel" width="430" height="430"></canvas>
+        <div id="spin">SPIN</div>
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+
+  <form action="/home" method="GET">
+    <button id="homeButton" class="homepage">HOME</button>
+  </form>
+
+  <div id="counter" style="display: none;"> 0 </div>
+
+
+
+
+
+
+  <script defer src="/js/fortune_wheel.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/ws-client.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="../js/inactivityTimer.js"> </script>
+</body>
+
+</html>

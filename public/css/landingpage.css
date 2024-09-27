@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: hsl(0, 0%, 8%);
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  background-color: #000000;
+  margin-block: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: min(100% - 1rem, 1000px);
+  gap: 50px;
+  box-shadow: 0px 0px 10px rgba(25,25,25,0.1);
+  border-radius: 8px;
+  padding: 50px;
+}
+
+.description{
+  border-radius: 20px;
+}
+
+.logo{
+    width: 670px;
+}
+
+p{
+    text-align: center;
+    margin: 0 auto;
+   
+
+}
+
+.text{
+    font-size: 20px;
+    color: white;
+}
+
+.label{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  
+  .description {
+    background-color: #E8BF66;
+    padding: 25px;
+    position: relative;
+    margin-left: -30px;
+    box-shadow: 0px 0px 10px rgba(25,25,25,0.1);
+    
+  }
+  img {
+    width: 252px;
+    /* box-shadow: 0px 0px 10px rgba(25,25,25,0.1); */
+  }
+  &:nth-of-type(even) {
+    flex-direction: row-reverse;
+    .description {
+      margin-left: auto;
+      margin-right: -30px;
+      button {
+        left: auto;
+        right: 25%;
+      }
+    }
+  }
+}
+
+
+#sign-up{
+    background-color: #E8BF66;
+    color: #000;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16pt;
+    cursor: pointer;
+    /* width: 100px;
+    height: 30px; */
+}
+
+#sign-up:hover{
+    background-color: #e0aa35;
+}
+
+#sign-up{
+    transition: background-color 150ms ease-in-out;
+}
+
+.innertext{
+    font-size: 15px;
+}
+
+#capt{
+  font-weight: bold;
+  font-size: 20pt;
+}
+
+.image{
+    width: 150px;
+    height: 150px;
+    border-radius: 50px;
+    margin-left: 10px;
+}
+
+.dev{
+    color: white;
+    font-size: 35px;
+}
+  
+
+  @media (max-width: 1000px) {
+    /* .header {
+      img{
+        width: 310px;
+      }
+    } */
+    .logo{
+      width: 330px;
+    }
+    .item {
+      flex-direction: column !important;
+      width: 100%;
+      .description {
+        margin: auto !important;
+        width: 330px;
+        /* width: 100% !important;
+        height: auto; */
+      }
+    }
+
+    .dev-images{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image{
+        margin-bottom: 40px;
+    }
+
+    img{
+        margin-top: 50px;
+        width: 252px;
+    }
+
+
+  }
+  

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Slot Machine</title>
+    <link rel="stylesheet" href="../css/slot_machine.css" />
+    <link rel="stylesheet" href="../css/opening.css" />
+    <link rel="stylesheet" href="../css/standard.css" />
+
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="light dark">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style media="screen, print"></style>
+    <script src="../js/slot_machine.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/ws-client.js"></script>
+    <link rel="icon" href="../images/usicoin.png" type="image/x-icon"/>
+</head>
+
+<body onload="slot()">
+    <h2 class="usernameholder" style="display: none;"><%= user.username %></h2>
+    <h2 class="emailholder" style="display: none;"><%= user.email %></h2>
+
+
+    <div id="app">
+        <h2 id="message" style="color: white;">
+                
+        </h2>
+        <div class="doors">
+            <div class="door">
+                <div class="boxes">
+                    <!-- <div class="box">?</div> -->
+                </div>
+            </div>
+
+            <div class="door">
+                <div class="boxes">
+                    <!-- <div class="box">?</div> -->
+                </div>
+            </div>
+
+            <div class="door">
+                <div class="boxes">
+                    <!-- <div class="box">?</div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+         
+            <form id="betForm" action="/casino/slot/bet" method="POST">
+                <p style="color: rgb(218, 75, 32);">Win / Loss <span id="addedCreditsDisplay">...</span></p>
+                <p style="color: goldenrod;">Credit: <span id="creditsDisplay"><%= user.credits %></span></p>     
+                <input type="number" id="betInput" name="betAmount" min="0.5" step="0.1" max="100" placeholder="Enter bet">
+                <button type="button" id="playButton">Play</button>
+                <button type="button" id="autoPlayButton">Auto</button>
+            </form>
+
+            <form action="/home" method="GET">
+                <button class="homepage">HOME</button>
+            </form>
+        
+        </div>
+
+
+        
+    </div>
+    <script src="../js/inactivityTimer.js"> </script>
+
+</body>
+
+</html>

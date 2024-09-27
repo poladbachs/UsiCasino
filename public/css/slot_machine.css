@@ -1,0 +1,109 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin-top: 5vw;
+  padding: 0;
+  background: black;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.doors {
+  display: flex;
+  justify-content: center;
+  width: 80vw;
+}
+
+.door {
+  background-color: goldenrod;
+  background-image: url('../images/slotsImages/slotdoortexture.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 2px;
+  border-radius: 15px;
+  width: 30vw;
+  height: 40vw;
+  overflow: hidden;
+}
+
+.boxes {
+  transition: transform 1s ease-in-out;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15vw;
+}
+
+.buttons {
+  margin: 1rem 0 2rem 0;
+  z-index: 2;
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin: 0 0.2rem;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+#betInput {
+  width: 70%;
+}
+
+
+#playButton {
+  /* margin-left: 55px; */
+}
+
+#playButton, #autoPlayButton, .homepage{
+    width: 35%;
+    height: 50%;
+    padding: 12px; /* Adjusted padding for smaller buttons */
+    /* margin-top: 45px; */
+    display: inline-block;
+    margin-bottom: 10px;
+    border: 1px solid #E8BF66;
+    border-radius: 20px; /* Increased border-radius for round buttons */
+    color: #E8BF66;
+    background-color: black;
+    cursor: pointer;
+    font-size: 18pt;
+}
+
+#playButton:hover, #autoPlayButton:hover, #betInput:hover {
+    border: 1.5px solid rgb(255, 181, 10);
+}
+
+.homepage {
+    width: 70%;
+    background-color: #E8BF66;
+    color: black;
+    /* margin-left: 55px; */
+}
+
+.homepage:hover {
+    background-color: rgb(255, 181, 10);
+    color: black;
+}
+
+ 
+
+
+.info {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}

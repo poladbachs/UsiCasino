@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>USI-CASINO</title>
+        <meta name="color-scheme" content="light dark">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+
+        <link rel="stylesheet" href="../css/log_reg.css" />
+        <link rel="stylesheet" href="../css/opening.css" />
+        <link rel="icon" href="../images/usicoin.png" type="image/x-icon"/>
+        <style media="screen,print">
+            @font-face {
+                font-family: 'Inter';
+                src: url(../font/Inter.ttf);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="Container">
+
+            <p class="label"><b>Login</b></p>
+
+            <form class="log" action="/login" method="POST">
+
+                
+                <input id="email" name= "email_login" type="email" required  title="Enter a valid title" placeholder="E-mail">
+
+                <div class="password-input">
+                    <input id="password" name="password_login" type="password" required  title="Enter a valid title" placeholder="Password">
+                    <button id="toggle-password1" type="button" onclick="togglePasswordVisibility()">Show</button>
+                </div>
+
+
+                <% if(errorMessage) { %>
+                    <p class="error-message"><%= errorMessage %></p>
+                <% } %>
+                
+                <button id="login">Login</button>
+
+                
+            </form>
+
+            <form class="reg" action="/registration" method="GET">
+                <button id="create">Don't have an account? Sign up</button>
+            </form>
+
+
+            <form  action="/landingpage" method="GET">
+                <button id="create">About Us</button>
+            </form>
+        </div>
+        
+    </body>
+
+    <script>
+        function togglePasswordVisibility() {
+          var passwordInput = document.getElementById('password');
+          var toggleButton = document.getElementById('toggle-password1');
+      
+          if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            toggleButton.textContent = 'Hide';
+          } else {
+            passwordInput.type = 'password';
+            toggleButton.textContent = 'Show';
+          }
+        }
+      </script>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Roulette 2.0
+    </title>
+    <link rel="stylesheet" href="../css/roulette.css">
+    <link rel="stylesheet" href="../css/opening.css" />
+    <link rel="icon" href="../images/usicoin.png" type="image/x-icon"/>
+   
+</head>
+<body>
+    
+    <div class="roulettespiner">
+        <img src="../public/images/rouletteImages/roulette_1.jpg" alt="">
+        <img class="actualSpinner" src="../public/images/rouletteImages/roulette_2.png" alt="">
+        <img src="../public/images/rouletteImages/roulette_3.png" alt="">
+        <img src="../public/images/rouletteImages/roulette_4.png" alt="">
+        <img src="../public/images/rouletteImages/roulette_5.png" alt="">
+    </div>
+
+
+    <form action="/home" method="GET">
+        <button class="homepage">HOME</button>
+    </form>
+
+    <h2 class="usernameholder" style="display: none;"><%= user.username %></h2>
+    <h2 class="emailholder" style="display: none;"><%= user.email %></h2>
+    <h2 class="message" style="color: white;"></h2>
+    <br>
+    <div style="color: white;"> <p>Table history:</p> </div>
+    <div class="history"></div>
+    <br>
+    <div id="counter" style="color: white; font-size: 16pt;" > 345678 </div>
+    <br>
+
+    
+    <div class="result">
+        <p style="color: goldenrod;">Credit: <span id="creditsDisplay"><%= user.credits %></span></p>
+        <p id="winNumber"></p>
+        <p id="winAmount"></p>
+    </div>
+
+    <div class="gamestuffs">
+        <%- include("./include/SoloWheel")%>
+        <div class="roulette-table">
+            <button class="chips" id="one">1</button>
+            <button class="chips" id="five">5</button>
+            <button class="chips" id="ten">10</button>
+            <button class="chips" id="twenty">20</button>
+            <button class="chips" id="fifty">50</button>
+    
+            
+    
+            
+            <table id="theBettingTableAsAWhole">
+                <tr id="Hello">
+                    <td colspan="14" id="PlaceBets">Place Your Bets <br> Your total bet: <span id="yourmoneywhichisnowmine">0</span>
+                    </td>
+                </tr>
+                <tr id="_NotTopLine">
+                    <td rowspan="3" class="green" id="_0"><span id="_0">0</span><div id="_0" class="placedbetschipsandstuff"></div></td>
+                    <td class="red" id="_3"><span id="_3">3</span><div id="_3" class="placedbetschipsandstuff"></div></td>
+                    <td class="black" id="_6"><span id="_6">6</span><div id="_6" class="placedbetschipsandstuff"></div></td>
+                    <td class="red" id="_9"><span id="_9">9</span><div id="_9" class="placedbetschipsandstuff"></div></td>
+                    <td class="red" id="_12"><span id="_12">12</span><div id="_12" class="placedbetschipsandstuff"></div></td>
+                    <td class="black" id="_15"><span id="_15">15</span><div id="_15" class="placedbetschipsandstuff"></div></td>
+                    <td class="red" id="_18"><span id="_18">18</span><div id="_18" class="placedbetschipsandstuff"></div></td>
+                    <td class="red" id="_21"><span id="_21">21</span><div id="_21" class="placedbetschipsandstuff"></div></td>
+                    <td class="black" id="_24"><span id="_24">24</span><div id="_24" class="placedbetschipsandstuff"></div></td>
+                    <td class="red" id="_27"><span id="_27">27</span><div id="_27" class="placedbetschipsandstuff"></div></td>
+                    <td class="red" id="_30"><span id="_30">30</span><div id="_30" class="placedbetschipsandstuff"></div></td>
+                    <td class="black" id="_33"><span id="_33">33</span><div id="_33" class="placedbetschipsandstuff"></div></td>
+                    <td class="red" id="_36"><span id="_36">36</span><div id="_36" class="placedbetschipsandstuff"></div></td>
+                    <td class="green" id="_TopLine"><span id="_TopLine">1Line</span><div id="_TopLine" class="placedbetschipsandstuff"></div></td>
+                </tr>
+                <tr id="_NotCenterLine">
+                    <td class="black" id="_2"><span id="_2">2</span><div id="_2" class="placedbetschipsandstuff"></div></td>
+                    <td class="red" id="_5"><span id="_5">5</span><div id="_5" class="placedbetschipsandstuff"></div></td>
+                    <td class="black" id="_8"><span id="_8">8</span><div id="_8" class="placedbetschipsandstuff"></div></td>
+                    <td class="black" id="_11"><span id="_11">11</span><div id="_11" class="placedbetschipsandstuff"></div></td>
+                    <td class="red" id="_14"><span id="_14">14</span><div id="_14" class="placedbetschipsandstuff"></div></td>
+                    <td class="black" id="_17"><span id="_17">17</span><div id="_17" class="placedbetschipsandstuff"></div></td>
+                    <td class="black" id="_20"><span id="_20">20</span><div id="_20" class="placedbetschipsandstuff"></div></td>
+                    <td class="red" id="_23"><span id="_23">23</span><div id="_23" class="placedbetschipsandstuff"></div></td>
+                    <td class="black" id="_26"><span id="_26">26</span><div id="_26" class="placedbetschipsandstuff"></div></td>
+                    <td class="black" id="_29"><span id="_29">29</span><div id="_29" class="placedbetschipsandstuff"></div></td>
+                    <td class="red" id="_32"><span id="_32">32</span><div id="_32" class="placedbetschipsandstuff"></div></td>
+                    <td class="black" id="_35"><span id="_35">35</span><div id="_35" class="placedbetschipsandstuff"></div></td>
+                    <td class="green" id="_CenterLine"><span id="_CenterLine">2Line</span><div id="_CenterLine" class="placedbetschipsandstuff"></div></td>
+                </tr>
+                <tr id="_NotBottomLine">
+                    <td class="red" id="_1"><span id="_1">1</span><div id="_1" class="placedbetschipsandstuff"></div></td>
+                    <td class="black" id="_4"><span id="_4">4</span><div id="_4" class="placedbetschipsandstuff"></div></td>
+                    <td class="red" id="_7"><span id="_7">7</span><div id="_7" class="placedbetschipsandstuff"></div></td>
+                    <td class="black" id="_10"><span id="_10">10</span><div id="_10" class="placedbetschipsandstuff"></div></td>
+                    <td class="black" id="_13"><span id="_13">13</span><div id="_13" class="placedbetschipsandstuff"></div></td>
+                    <td class="red" id="_16"><span id="_16">16</span><div id="_16" class="placedbetschipsandstuff"></div></td>
+                    <td class="red" id="_19"><span id="_19">19</span><div id="_19" class="placedbetschipsandstuff"></div></td>
+                    <td class="black" id="_22"><span id="_22">22</span><div id="_22" class="placedbetschipsandstuff"></div></td>
+                    <td class="red" id="_25"><span id="_25">25</span><div id="_25" class="placedbetschipsandstuff"></div></td>
+                    <td class="black" id="_28"><span id="_28">28</span><div id="_28" class="placedbetschipsandstuff"></div></td>
+                    <td class="black" id="_31"><span id="_31">31</span><div id="_31" class="placedbetschipsandstuff"></div></td>
+                    <td class="red" id="_34"><span id="_34">34</span><div id="_34" class="placedbetschipsandstuff"></div></td>
+                    <td class="green" id="_BottomLine"><span id="_BottomLine">3Line</span><div id="_BottomLine" class="placedbetschipsandstuff"></div></td>
+                </tr>
+                <tr id="_twelves">
+                    <td class="nothing"></td>
+                    <td colspan="4" class="green" id="_firstTwelve"><span id="_firstTwelve">1st 12</span><div id="_firstTwelve" class="placedbetschipsandstuff"></div></td>
+                    <td colspan="4" class="green" id="_secondTwelve"><span id="_secondTwelve">2nd 12</span><div id="_secondTwelve" class="placedbetschipsandstuff"></div></td>
+                    <td colspan="4" class="green" id="_thirdTwelve"><span id="_thirdTwelve">3rd 12</span><div id="_thirdTwelve" class="placedbetschipsandstuff"></div></td>
+                </tr>
+                <tr id="_oneToOneBets">
+                    <td class="nothing"></td>
+                    <td colspan="2" class="green" id="_oneToEighteen"><span id="_oneToEighteen">1 to 18</span><div id="_oneToEighteen" class="placedbetschipsandstuff"></div></td>
+                    <td colspan="2" class="green" id="_EVEN"><span id="_EVEN">EVEN</span><div id="_EVEN" class="placedbetschipsandstuff"></div></td>
+                    <td colspan="2" class="red" id="_RED"><span id="_RED">RED</span><div id="_RED" class="placedbetschipsandstuff"></div></td>
+                    <td colspan="2" class="black" id="_BLACK"><span id="_BLACK">BLACK</span><div id="_BLACK" class="placedbetschipsandstuff"></div></td>
+                    <td colspan="2" class="green" id="_ODD"><span id="_ODD">ODD</span><div id="_ODD" class="placedbetschipsandstuff"></div></td>
+                    <td colspan="2" class="green" id="_ninteenToThreeSix"><span id="_ninteenToThreeSix">19 to 36</span><div id="_ninteenToThreeSix" class="placedbetschipsandstuff"></div></td>
+                </tr>
+            </table>
+            </div>
+    </div>
+
+<script src="../socket.io/socket.io.js"></script>
+<script src="../js/checkClick.js"></script>
+<script src="../js/ws-client-roullette.js"></script>
+<script src="../js/ejs.min.js"></script>
+<script src="../js/styleR.js"></script>
+<script src="../js/api-client.js"></script>
+<script src="../js/views.js"></script>
+<script src="../js/inactivityTimer.js"> </script>
+<!-- <script>
+    const updatedUserCredits = updated_user.credits;
+    const winningAmount = winningAmount;
+    const randomNumber = randomNumber;
+
+    document.getElementById("creditsDisplay").textContent = updatedUserCredits;
+    document.getElementById("winAmount").textContent = winningAmount;
+    document.getElementById("winNumber").textContent = randomNumber;
+</script> -->
+
+</body>
+</html>
+
+    

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="color-scheme" content="light dark">
+    <title>USI-CASINO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/opening.css" />
+    <link rel="icon" href="../images/usicoin.png" type="image/x-icon"/>
+    
+    <style media="screen,print">
+        @font-face {
+            font-family: 'Inter';
+            src: url(../font/Inter.ttf);
+        }
+    </style>
+</head>
+<body>
+    <audio controls autoplay loop hidden>
+        <source src="../music/index-background.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="cookieConsentContainer">
+        <div id="cookieConsentOverlay"></div>
+        <div id="cookieConsentBanner">
+            <p>This site uses cookies. By continuing to use this site, you accept our use of cookies.</p>
+            <p>Also we are not using real money. So, have fun!</p>
+            <button id="acceptCookies">Accept</button>
+        </div>
+    </div>
+    <h2 class="emailholder" style="display: none;"><%= user.email %></h2>
+
+
+
+
+
+
+    <section class="top-part">
+
+
+
+        <div class="credits-section">
+            <p class="username" >Balance: <%= user.credits %> 
+                <img src="../images/usicoin.png" alt="usi coin" class="coin"/>  
+            </p>
+            <!-- Plus sign -->
+            <span class="plus-sign" onclick="toggleDropdown('plus-sign')">Add money &#43;</span>
+            <!-- Dropdown menu for Credits -->
+            <div class="dropdown" id="dropdownCredits">
+                <div class="dropdown-content">
+                
+                    <form class="moneyAddition" action="/addMoney" method="POST">
+                        <label class="username" >Enter your amount:</label>
+                        <input type="number"  id="creditAmount" placeholder="Enter amount" />
+
+                        <p class="username" id="amountError" class="error-message"></p>
+
+                        <label class="username" id="promocodeTitle" >Enter valid promocode:</label>
+                        <input type="text"  id="promoCode" placeholder="Enter promocode" />
+
+                        <p class="username" id="promoCodeError" class="error-message"></p>
+
+                        <% if (user.credits > 500) { %>
+                            <button id="addMoney" disabled>Apply</button>
+                            <p class="username" class="error-message">You can still get back at it!</p>
+                        <% } else { %>
+                            <button id="addMoney">Apply</button>
+                        <% } %>
+                    </form>
+
+                </div>
+            </div>
+
+            
+        </div>
+        
+
+
+
+
+        <img src="../images/indexImages/logo.png" alt="Logo" class="logo" />
+
+
+
+
+
+        <div class="information-section">
+
+            <div class="user-information" onclick="toggleDropdown('user-information')" >
+                
+                <img  class="user-menu" src="../images/indexImages/user.png" alt="burgen menu"   >
+
+                <p class="usernameInfo"> <%= user.username %> </p>
+
+            </div>
+
+
+            <!-- User dropdown -->
+            <div class="dropdown" id="dropdownUserInfo">
+                <div class="dropdown-content">
+                    
+                    <p class="username">Username: <%= user.username %></p>
+                    <p class="username">Email:    <%= user.email %></p>
+                    <p class="username">UniqueID: <%= user.id %></p>
+
+                    
+
+                    <label class="username" for="newUsername" id="changeUsernameLabel">Change Username</label>
+            
+                    <div id="changeUsernameSection" style="display: none;">
+                        <p class="username">The cost of renaming: 5000</p>
+
+                        <form action="/nameRenaming" method="POST">
+                            <input type="text" name="newUsername" id="newUsername" placeholder="Enter new username" /> <br>
+                            
+                        
+                            <% if (user.credits < 5000) { %>
+                                <p class="username" id="renamingNameError">Not enought credits</p>
+                            <% } else { %>    
+                                <button id="confirmUsername" disabled>Confirm</button>
+                            <% } %>     
+                        </form>
+                    </div> 
+                    
+                    <form id="logoutForm" action="/logout" method="POST">
+                        <button id="logout">Log out</button>
+                    </form>
+                </div>     
+            </div>
+            
+
+        </div>
+        
+
+
+    </section>
+
+
+
+
+
+
+
+    <div class="greetingAndCounter">
+
+        <div class="greetingLabel">
+            <p id="greeting"></p>
+            <!-- Display username -->
+            <p class="usernameholder">, <%= user.username %>!</p>
+        </div>
+
+        <div id="counter"> 0 </div>   
+
+    </div>   
+
+        
+
+
+
+    
+
+
+    <br> <br>
+    
+
+
+
+
+
+    <div class="container">
+        <input type="radio" name="slider" id="item-1" checked>
+        <input type="radio" name="slider" id="item-2">
+        <input type="radio" name="slider" id="item-3">
+        <input type="radio" name="slider" id="item-4">
+
+      <div class="cards">
+        <label class="card" for="item-1" id="song-1">
+            <img class="game-pictures" src="../images/indexImages/wheel-of-fortune.png" alt="Game Picture">
+            <form class="game-buttons" action="/games/fortune-wheel" method="GET">
+              <button id="fortune-wheel">Play fortune Wheel</button>
+            </form>
+          </label>
+        
+        <label class="card" for="item-2" id="song-2">
+          <img class="game-pictures" src="../images/indexImages/slot-machine.png" alt="Game Picture">
+          <form class="game-buttons" action="/games/slot" method="GET">
+            <button id="slots">Play slot game</button>
+          </form>
+        </label>
+        <label class="card" for="item-3" id="song-3">
+            <img class="game-pictures" src="../images/indexImages/blackjack.png" alt="Game Picture">
+            <form class="game-buttons" action='/games/blackjack' method="GET">
+              <button id="black-jack">Play black jack</button>
+            </form>
+          </label>
+        <label class="card" for="item-4" id="song-4">
+            <img class="game-pictures" src="../images/indexImages/roulette.png" alt="Game Picture">
+            <form class="game-buttons" action="/games/roulette" method="GET">
+                <button id="roulette">Play roulette</button>
+            </form>
+        </label>
+      </div>
+      
+    </div>
+
+
+
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="left">
+                <p>&copy; USI.Casino 2023</p>
+            </div>
+            <div class="center">
+            </div>
+            <div class="right">
+                <p>Email: <a href="mailto:support@usi.casino">support@usi.casino</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+    
+    
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/ws-client.js"></script>
+    <script src="../js/indexPage.js"> </script>
+    <script src="../js/inactivityTimer.js"> </script>
+    <!-- <script src="js/indexWheel.js"></script> -->
+
+    <script>
+        //audioObject.play();
+        // JavaScript function to toggle the active class on the plus sign or user logo
+        function toggleDropdown(elementClass) {
+            var element = document.querySelector('.' + elementClass);
+            element.classList.toggle('active');
+        }
+
+        // JavaScript to toggle visibility of Change Username section
+         document.getElementById('changeUsernameLabel').addEventListener('click', function () {
+            var changeUsernameSection = document.getElementById('changeUsernameSection');
+            changeUsernameSection.style.display = (changeUsernameSection.style.display === 'none' || changeUsernameSection.style.display === '') ? 'flex' : 'none';
+        });
+
+    </script>
+
+
+
+
+    </body>
+</html>

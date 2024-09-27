@@ -1,0 +1,351 @@
+
+:root{
+  --color-one-chip: rgb(85, 85, 85);
+  --color-five-chip: rgb(0, 187, 255);
+  --color-ten-chip: rgb(255, 174, 0);
+  --color-twenty-chip: rgb(187, 0, 255);
+  --color-fifty-chip: rgb(76, 0, 255);
+}
+
+body{
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(0, 51, 3);
+  background-image: url('../images/rouletteimages/felt.png');
+  background-size: 128px;
+  font-family: "Inter", sans-serif;
+}
+
+p {
+  font-size: 10pt;
+  margin: 0;
+}
+
+.roulette-table {
+  padding: 10px;
+ }
+
+ form {
+  position: absolute;
+  text-align: right;
+  top: 5%; right: 5%;
+ }
+
+ form button {
+    height: 50%;
+    padding: 12px; /* Adjusted padding for smaller buttons */
+    border: 1px solid #E8BF66;
+    border-radius: 20px; /* Increased border-radius for round buttons */
+    color: #E8BF66;
+    background-color: black;
+    cursor: pointer;
+    font-size: 18pt;
+}
+
+form button:hover  {
+  border: 1.5px solid rgb(255, 181, 10);
+}
+
+ #theBettingTableAsAWhole{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-image: url('../images/rouletteimages/felt.png');
+ }
+ 
+ .roulette-table table {
+  border-collapse: collapse;
+  margin: 0 auto;
+ }
+ 
+ .roulette-table td {
+  border: 1px solid white;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  width: 20px;
+ }
+ .roulette-table td.black {
+  background-color: black;
+  color: white;
+ }
+
+ .roulette-table td.red {
+  background-color: red;
+  color: white;
+ }
+ .roulette-table td.green {
+  background-color: green;
+  color: white;
+ }
+ .roulette-table td#PlaceBets {
+  background-color: rgb(112, 29, 36);
+  color: white;
+  font-size: larger;
+ }
+
+ .roulette-history {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+ }
+
+ .roulette-history span {
+  border: 1px solid white;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  width: 20px;
+ }
+
+ .roulette-history span.black {
+  background-color: black;
+  color: white;
+ }
+
+ .roulette-history span.red {
+  background-color: red;
+  color: white;
+ }
+ .roulette-history span.green {
+  background-color: green;
+  color: white;
+ }
+
+ .roulette-table button.chips {
+  padding: 10px;
+  border: 0.5px;
+  border-radius: 50%;
+  color: white;
+  font-size: larger;
+  cursor: pointer;
+  width: 2.5em;
+  height: 2.5em;
+ }
+
+ .roulette-table button#one{
+  background-color: var(--color-one-chip);
+ }
+.roulette-table button#one:active,
+.roulette-table button#one.active { 
+  outline: 2px solid red;
+}
+.roulette-table button#five{
+  background-color: var(--color-five-chip);
+}
+.roulette-table button#five:active,
+.roulette-table button#five.active { 
+  outline: 2px solid red;
+}
+
+
+.roulette-table button#ten{
+  background-color: var(--color-ten-chip);
+}
+.roulette-table button#ten:active,
+.roulette-table button#ten.active { 
+  outline: 2px solid red;
+}
+
+
+.roulette-table button#twenty{
+  background-color: var(--color-twenty-chip);
+}
+.roulette-table button#twenty:active,
+.roulette-table button#twenty.active { 
+  outline: 2px solid red;
+}
+
+
+.roulette-table button#fifty{
+  background-color: var(--color-fifty-chip);
+}
+.roulette-table button#fifty:active,
+.roulette-table button#fifty.active { 
+  outline: 2px solid red;
+}
+
+.input-container {
+  margin: 10px;
+}
+
+
+.placedbetschipsandstuff {
+  position: relative;
+}
+
+.placedbetschipsandstuff p{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 0;
+  border: 0.5px;
+  border-radius: 50%;
+  color: white;
+}
+
+.placedbetschipsandstuff p.one{
+  background-color: var(--color-one-chip);
+ }
+
+.placedbetschipsandstuff p.five{
+  background-color: var(--color-five-chip);
+}
+.placedbetschipsandstuff p.ten{
+  background-color: var(--color-ten-chip);
+}
+.placedbetschipsandstuff p.twenty{
+  background-color: var(--color-twenty-chip);
+}
+.placedbetschipsandstuff p.fifty{
+  background-color: var(--color-fifty-chip);
+}
+
+.input-container {
+  margin: 10px;
+}
+
+
+ .roulette-table button#five{
+  background-color: var(--color-five-chip);
+ }
+ .roulette-table button#ten{
+  background-color: var(--color-ten-chip);
+ }
+  .roulette-table button#twenty{
+    background-color: var(--color-twenty-chip);
+  }
+  .roulette-table button#fifty{
+    background-color: var(--color-fifty-chip);
+  }
+ 
+
+.img6 {
+  position: bottom;
+  width: 100%;
+  height: 100%;
+}
+
+.gamestuffs {
+  height: 80vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  position: relative;
+  width: 760px;
+  height: 760px;
+  margin: 0;
+  padding: 0;
+
+  scale: 0.5;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+.image:nth-child(2) {
+  z-index: 1; /* Adjust the z-index to control the stacking order */
+}
+
+.image:nth-child(3) {
+  z-index: 2; /* Adjust the z-index to control the stacking order */
+}
+
+.image:nth-child(4) {
+  z-index: 3; /* Adjust the z-index to control the stacking order */
+}
+
+.image:nth-child(5) {
+  z-index: 4; /* Adjust the z-index to control the stacking order */
+}
+
+.image:nth-child(6) {
+  width: 30px;
+  height: 30px;
+  z-index: 8; /* Adjust the z-index to control the stacking order */
+}
+
+.square {
+  rotate: 45deg;
+  position: absolute;
+  top: 150px;
+  left: 150px;
+  scale: 0.95;
+  /* transform: translate(-50%, -50%); */
+  width: 450px;
+  height: 450px;
+  z-index: 8; /* Adjust the z-index to control the stacking order */
+}
+
+#TheBall {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  scale: 1.3;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 1305px) {
+  body {
+    height: auto;
+    width: 100vw;
+  }
+  form {
+    width: 100%;
+    left: 100%;
+  }
+  .gamestuffs {
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .roulette-history {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+   }
+
+   #theBettingTableAsAWhole{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100vw;
+   }
+
+   #theBettingTableAsAWhole tr {
+    width: 100vw;
+   }
+
+   .history {
+    width: 100vw;
+   }
+
+   .roulette-history {
+    width: 100%;
+   }
+}
+
+@media screen and (max-height: 860px) {
+  .image-container {
+    scale: 0.1;
+  }
+}
+
+

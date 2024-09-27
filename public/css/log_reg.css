@@ -1,0 +1,176 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: hsl(0, 0%, 8%);
+    font-family: "Inter", sans-serif;
+}
+
+.Container {
+    background-color: #000000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 465px;
+}
+
+.label {
+    color: white;
+    text-align: center;
+    font-size: 36pt; /* Adjusted font size for better readability */
+    margin-bottom: 40px;
+}
+
+.log,
+.reg {
+    width: 80%; /* Adjusted width for better responsiveness */
+    margin: 10px 0;
+}
+
+input {
+    width: 120%;
+    padding: 20px;
+    margin: 10px 0;
+    margin-left: -35px;
+    box-sizing: border-box;
+    border: 2px solid #E8BF66;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    transition: box-shadow 0.3s ease-in-out;
+    font-size: 12pt;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 10px 5px rgba(214, 153, 9, 1);
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+#email::placeholder,
+#password::placeholder,
+#confirm-password::placeholder,
+#username::placeholder {
+    color: white;
+    font-size: 11pt;
+}
+
+#login {
+    width: 70%;
+    height: 50%;
+    padding: 12px; /* Adjusted padding for smaller buttons */
+   margin-top: 45px;
+    margin-left: 55px;
+    margin-bottom: -10px;
+    border: 1px solid #E8BF66;
+    border-radius: 20px; /* Increased border-radius for round buttons */
+    color: #E8BF66;
+    background-color: black;
+    cursor: pointer;
+    font-size: 18pt;
+}
+
+#create {
+    width: 100%;
+    padding: 12px; /* Adjusted padding for smaller buttons */
+    margin: 10px 0;
+    margin-bottom: 5px;
+    border: 1px solid #E8BF66;
+    border-radius: 20px; /* Increased border-radius for round buttons */
+    color: black;
+    background-color: #E8BF66;
+    cursor: pointer;
+    font-size: 14pt;
+}
+
+
+#create:hover {
+    border: 1.5px solid rgb(255, 181, 10);
+}
+
+#login:hover  {
+    border: 1.5px solid rgb(255, 181, 10);
+}
+
+/* Стилизация контейнера с полем ввода и кнопкой */
+.password-input {
+  position: relative;
+  display: inline-block;
+  width: 100%; /* Добавлено для правильного позиционирования кнопки внутри инпута */
+}
+
+/* Добавлены стили для кнопки просмотра пароля */
+#toggle-password {
+  position: absolute;
+  top: 25%;
+  left: 93%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 14pt;
+}
+
+#toggle-password1 {
+    position: absolute;
+    top: 50%;
+    left: 93%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 14pt;
+  }
+
+/* Добавлен стиль при фокусе кнопки */
+#toggle-password:focus {
+  outline: none;
+}
+
+.error-message{
+    color: white;
+    margin-left: 90px;
+    margin-bottom: -10px;
+    
+}
+
+
+
+
+/* Add the following media query styles to your existing media query */
+@media (max-width: 768px) {
+    .Container {
+        width: 100vw;
+        text-align: center;
+    }
+
+    .log,
+    .reg {
+        width: 85vw;
+    }
+
+    input {
+        width: 100%;
+        margin-left: -1%;
+    }
+    #login{
+        margin-left: 1%;
+    }
+    #toggle-password{
+    margin-left: -55px;
+    }
+    #toggle-password1{
+        margin-left: -55px;
+    }
+}
