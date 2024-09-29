@@ -10,6 +10,10 @@
 
 ![casino_mm](https://github.com/user-attachments/assets/d202350f-4144-4f70-bea0-9b67c33f6044)
 
+- **Fortune Wheel 3x WIN**
+
+![fortune_wheel_3x](https://github.com/user-attachments/assets/2ebd4482-d21e-4c78-b612-0ca225396ca1)
+
 ## Features
 
 - **Risk-Free Enjoyment**: Enjoy a stress-free gambling experience without the worry of losing real money.
