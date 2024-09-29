@@ -34,6 +34,10 @@
 
 ![blackjack_win](https://github.com/user-attachments/assets/c6af0d60-2be4-49ef-8070-a3375798ff40)
 
+- **Slots Auto Spin Mode**
+
+![slots_auto](https://github.com/user-attachments/assets/99900023-e405-4775-92ac-9622b348008c)
+
 ## Features
 
 - **Risk-Free Enjoyment**: Enjoy a stress-free gambling experience without the worry of losing real money.
