@@ -14,6 +14,10 @@
 
 ![fortune_wheel_3x](https://github.com/user-attachments/assets/2ebd4482-d21e-4c78-b612-0ca225396ca1)
 
+- **Number Slots WIN**
+
+![number_slots_win](https://github.com/user-attachments/assets/85049fc4-00c4-4318-85e7-46b9e595237a)
+
 ## Features
 
 - **Risk-Free Enjoyment**: Enjoy a stress-free gambling experience without the worry of losing real money.
