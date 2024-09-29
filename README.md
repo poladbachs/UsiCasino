@@ -4,6 +4,12 @@
 
 **USI Casino** is an Online Casino platform designed to provide users with a thrilling and risk-free gambling experience. The platform emphasizes responsible gaming while offering a seamless, user-friendly interface for players of all levels.
 
+**Demo**
+
+- **Main Menu**
+
+![casino_mm](https://github.com/user-attachments/assets/d202350f-4144-4f70-bea0-9b67c33f6044)
+
 ## Features
 
 - **Risk-Free Enjoyment**: Enjoy a stress-free gambling experience without the worry of losing real money.
