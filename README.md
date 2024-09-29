@@ -26,6 +26,10 @@
 
 ![lose_bet_lose](https://github.com/user-attachments/assets/4ef338ad-02a6-4c87-bf42-e02bf6faf1b6)
 
+- **Roulette with Multiplayer Mode**
+
+![roulette_black](https://github.com/user-attachments/assets/79d11765-4048-4cd3-8360-02cd7acb343d)
+
 ## Features
 
 - **Risk-Free Enjoyment**: Enjoy a stress-free gambling experience without the worry of losing real money.
