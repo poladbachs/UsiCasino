@@ -18,6 +18,10 @@
 
 ![number_slots_win](https://github.com/user-attachments/assets/85049fc4-00c4-4318-85e7-46b9e595237a)
 
+- **Guess Game with Bets and Wins**
+
+![guess_game_win](https://github.com/user-attachments/assets/b868a5b7-72e8-4f5f-8305-8e7a0fd1b7b4)
+
 ## Features
 
 - **Risk-Free Enjoyment**: Enjoy a stress-free gambling experience without the worry of losing real money.
