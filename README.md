@@ -22,10 +22,6 @@
 
 ![guess_game_win](https://github.com/user-attachments/assets/b868a5b7-72e8-4f5f-8305-8e7a0fd1b7b4)
 
-- **Lose Bet**
-
-![lose_bet_lose](https://github.com/user-attachments/assets/4ef338ad-02a6-4c87-bf42-e02bf6faf1b6)
-
 - **Roulette**
 
 ![roulette_black](https://github.com/user-attachments/assets/79d11765-4048-4cd3-8360-02cd7acb343d)
